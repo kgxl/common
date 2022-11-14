@@ -1,4 +1,4 @@
-package com.kgxl.base
+package com.kgxl.base.utils
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.kgxl.base.R
+import com.kgxl.base.Utils
 
 /**
  * Created by zjy on 2022/11/10
@@ -54,7 +56,7 @@ object NotificationUtil {
     }
 
     private fun createRemoteViews(): RemoteViews {
-        return RemoteViews(Utils.getApp().packageName, R.layout.layout_remote_download)
+        return RemoteViews(Utils.app.packageName, R.layout.layout_remote_download)
     }
 
     private fun createChannel(ctx: Context): String {

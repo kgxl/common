@@ -1,8 +1,14 @@
 package com.kgxl.base
 
+import android.bluetooth.BluetoothAdapter
+import android.content.IntentFilter
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.kgxl.base.ext.launch
+import com.kgxl.base.utils.NotificationUtil
+import com.kgxl.ble.BleReceiver
+import com.kgxl.ble.WrapBleManager
 import com.kgxl.download.DownLoadFactory
 import com.kgxl.download.OKDownloadListener
 import com.liulishuo.okdownload.DownloadTask
@@ -22,6 +28,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(com.kgxl.base.test.R.id.btn_clear).setOnClickListener {
 
             NotificationUtil.clearNotify(this, NotificationUtil.DEFAULT_CHANNEL_ID)
+        }
+        findViewById<Button>(com.kgxl.base.test.R.id.btn_scanner).setOnClickListener {
+
+            WrapBleManager().startScanner()
         }
         findViewById<Button>(com.kgxl.base.test.R.id.btn_download).setOnClickListener {
 
@@ -53,4 +63,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        val bleReceiver = BleReceiver()
+        val intentFilter = IntentFilter()
+        intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED)
+        intentFilter.addAction(BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED)
+        registerReceiver(bleReceiver, intentFilter)
+        launch{
+            bleReceiver.bleState.collect {
+                println("$it")
+            }
+        }
+
+    }
 }

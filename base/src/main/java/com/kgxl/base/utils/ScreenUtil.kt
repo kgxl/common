@@ -1,7 +1,5 @@
-package com.kgxl.base
+package com.kgxl.base.utils
 
-import com.kgxl.base.ScreenUtil
-import android.util.DisplayMetrics
 import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
@@ -9,7 +7,6 @@ import android.graphics.Point
 import android.graphics.Rect
 import android.view.WindowManager
 import android.os.Build
-import android.view.DisplayCutout
 import android.text.TextUtils
 import java.lang.ClassCastException
 import java.lang.Exception

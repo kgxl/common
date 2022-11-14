@@ -1,4 +1,4 @@
-package com.kgxl.base
+package com.kgxl.base.ext
 
 import android.Manifest
 import android.app.Activity
@@ -14,6 +14,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
 
 /**
@@ -53,19 +54,19 @@ fun Activity.canRecord(isRequest: Boolean): Boolean {
     )
 }
 
-inline fun AppCompatActivity.launch(coroutineContext: EmptyCoroutineContext, crossinline invoke: suspend CoroutineScope.() -> Unit): Job {
+inline fun AppCompatActivity.launch(coroutineContext: CoroutineContext = EmptyCoroutineContext, crossinline invoke: suspend CoroutineScope.() -> Unit): Job {
     return lifecycleScope.launch(coroutineContext) {
         invoke()
     }
 }
 
-inline fun Fragment.launch(coroutineContext: EmptyCoroutineContext, crossinline invoke: suspend CoroutineScope.() -> Unit): Job {
+inline fun Fragment.launch(coroutineContext: CoroutineContext = EmptyCoroutineContext, crossinline invoke: suspend CoroutineScope.() -> Unit): Job {
     return lifecycleScope.launch(coroutineContext) {
         invoke()
     }
 }
 
-inline fun ViewModel.launch(coroutineContext: EmptyCoroutineContext, crossinline invoke: suspend CoroutineScope.() -> Unit): Job {
+inline fun ViewModel.launch(coroutineContext: CoroutineContext = EmptyCoroutineContext, crossinline invoke: suspend CoroutineScope.() -> Unit): Job {
     return viewModelScope.launch(coroutineContext) {
         invoke()
     }

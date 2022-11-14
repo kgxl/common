@@ -1,4 +1,4 @@
-package com.kgxl.base
+package com.kgxl.base.utils
 
 /**
  * Created by zjy on 2022/11/11
@@ -15,6 +15,7 @@ import android.widget.LinearLayout
 import androidx.annotation.ColorInt
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.drawerlayout.widget.DrawerLayout
+import com.kgxl.base.R
 
 /**
  * Created by zjy on 2019-05-14
