@@ -8,11 +8,10 @@ import androidx.viewbinding.ViewBinding
  * Created by zjy on 2022/11/10
  */
 abstract class BaseBindingActivity<V : ViewBinding> : AppCompatActivity() {
-    private val vbLazy by lazy {
+
+    protected val mViewBinding: V by lazy {
         initViewBinding()
     }
-
-    protected var mViewBinding: V = vbLazy
 
     abstract fun initViewBinding(): V
 

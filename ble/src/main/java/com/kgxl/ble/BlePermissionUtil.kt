@@ -4,6 +4,7 @@ import android.Manifest
 import android.bluetooth.BluetoothAdapter
 import android.content.Context
 import android.content.pm.PackageManager
+import android.location.LocationManager
 import android.os.Build
 import androidx.core.content.ContextCompat
 
@@ -36,5 +37,10 @@ object BlePermissionUtil {
 
     private fun isKitkatOrAbove(): Boolean {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
+    }
+
+    fun checkGPS(context: Context): Boolean {
+        val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
     }
 }

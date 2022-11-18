@@ -1,24 +1,40 @@
 package com.kgxl.base
 
 import android.bluetooth.BluetoothAdapter
+import android.content.Intent
 import android.content.IntentFilter
-import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
+import com.kgxl.base.ble.BleActivity
 import com.kgxl.base.ext.launch
+import com.kgxl.base.test.databinding.ActivityMainBinding
 import com.kgxl.base.utils.NotificationUtil
 import com.kgxl.ble.BleReceiver
-import com.kgxl.ble.WrapBleManager
 import com.kgxl.download.DownLoadFactory
 import com.kgxl.download.OKDownloadListener
 import com.liulishuo.okdownload.DownloadTask
 import com.liulishuo.okdownload.SpeedCalculator
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
     var count = 0
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(com.kgxl.base.test.R.layout.activity_main)
+
+    override fun onResume() {
+        super.onResume()
+        val bleReceiver = BleReceiver()
+        val intentFilter = IntentFilter()
+        intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED)
+        registerReceiver(bleReceiver, intentFilter)
+        launch {
+            bleReceiver.bleState.collect {
+                println("$it")
+            }
+        }
+    }
+
+    override fun initViewBinding(): ActivityMainBinding {
+        return ActivityMainBinding.inflate(layoutInflater)
+    }
+
+    override fun initView() {
 
         findViewById<Button>(com.kgxl.base.test.R.id.btn_send).setOnClickListener {
 
@@ -29,10 +45,7 @@ class MainActivity : AppCompatActivity() {
 
             NotificationUtil.clearNotify(this, NotificationUtil.DEFAULT_CHANNEL_ID)
         }
-        findViewById<Button>(com.kgxl.base.test.R.id.btn_scanner).setOnClickListener {
 
-            WrapBleManager().startScanner()
-        }
         findViewById<Button>(com.kgxl.base.test.R.id.btn_download).setOnClickListener {
 
             DownLoadFactory.getOkDownload().apply {
@@ -60,21 +73,15 @@ class MainActivity : AppCompatActivity() {
                 })
             }
         }
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-        val bleReceiver = BleReceiver()
-        val intentFilter = IntentFilter()
-        intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED)
-        intentFilter.addAction(BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED)
-        registerReceiver(bleReceiver, intentFilter)
-        launch{
-            bleReceiver.bleState.collect {
-                println("$it")
-            }
+        mViewBinding.btnBle.setOnClickListener {
+            startActivity(Intent(this, BleActivity::class.java))
         }
-
     }
+
+    override fun initData() {
+    }
+
+    override fun initObserver() {
+    }
+
 }
