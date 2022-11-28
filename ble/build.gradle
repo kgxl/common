@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
+apply from : '../maven.gradle'
 
 android {
     namespace 'com.kgxl.ble'
@@ -39,5 +40,4 @@ dependencies {
     api 'no.nordicsemi.android.support.v18:scanner:1.6.0'
     api 'no.nordicsemi.android:ble-ktx:2.6.0-alpha03'
     api 'no.nordicsemi.android:ble-livedata:2.6.0-alpha03'
-    api project(':base')
 }

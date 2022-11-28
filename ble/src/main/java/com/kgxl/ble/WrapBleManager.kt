@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import no.nordicsemi.android.ble.Request
 import no.nordicsemi.android.ble.livedata.ObservableBleManager
 import no.nordicsemi.android.support.v18.scanner.*
-import java.lang.reflect.InvocationTargetException
 import java.util.concurrent.atomic.AtomicBoolean
 
 

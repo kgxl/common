@@ -1,0 +1,14 @@
+apply plugin: 'maven-publish'
+
+afterEvaluate {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId "com.kgxl"
+                artifactId project.ARTIFACT_ID
+                version rootProject.ext.versionCode
+                from components.release
+            }
+        }
+    }
+}

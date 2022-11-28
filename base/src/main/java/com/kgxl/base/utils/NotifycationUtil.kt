@@ -16,7 +16,7 @@ import com.kgxl.base.Utils
  */
 object NotificationUtil {
     const val DEFAULT_CHANNEL_ID = 111
-    fun startNotify(ctx: Context, defaultChannelId: Int, title: String, content: String) {
+    fun startNotify(ctx: Context, icon: Int, defaultChannelId: Int, title: String, content: String) {
         val builder =
             NotificationCompat.Builder(ctx, createChannel(ctx))
         builder.setSound(null)
@@ -25,11 +25,11 @@ object NotificationUtil {
             .setPriority(NotificationCompat.PRIORITY_MIN)
             .setContentTitle(title)
             .setContentText(content)
-            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(icon)
         NotificationManagerCompat.from(ctx).notify(defaultChannelId, builder.build())
     }
 
-    fun startDownloadNotify(ctx: Context, defaultChannelId: Int, title: String, progress: Int) {
+    fun startDownloadNotify(ctx: Context, icon: Int, defaultChannelId: Int, title: String, progress: Int) {
         val remoteViews = createRemoteViews()
         remoteViews.setCharSequence(R.id.title, "setText", title)
         if (progress >= 100) {
@@ -47,7 +47,7 @@ object NotificationUtil {
             .setOngoing(true)
             .setPriority(NotificationCompat.PRIORITY_MIN)
             .setCustomContentView(remoteViews)
-            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(icon)
         NotificationManagerCompat.from(ctx).notify(defaultChannelId, builder.build())
     }
 

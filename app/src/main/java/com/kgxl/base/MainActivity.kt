@@ -38,7 +38,7 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
 
         findViewById<Button>(com.kgxl.base.test.R.id.btn_send).setOnClickListener {
 
-            NotificationUtil.startDownloadNotify(this, NotificationUtil.DEFAULT_CHANNEL_ID, "下载通知", count++)
+            NotificationUtil.startDownloadNotify(this, NotificationUtil.DEFAULT_CHANNEL_ID, com.kgxl.base.test.R.mipmap.ic_launcher,"下载通知", count++)
         }
 
         findViewById<Button>(com.kgxl.base.test.R.id.btn_clear).setOnClickListener {
