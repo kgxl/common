@@ -21,3 +21,4 @@ include ':base'
 include ':download'
 include ':ble'
 
+include ':network'

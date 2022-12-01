@@ -13,7 +13,6 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.LinearLayout
 import androidx.annotation.ColorInt
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.drawerlayout.widget.DrawerLayout
 import com.kgxl.base.R
 
@@ -76,22 +75,8 @@ object StatusBarUtil {
             val contentView = activity.findViewById<View>(android.R.id.content) as ViewGroup
             val rootView = contentView.getChildAt(0)
             val statusBarHeight = getStatusBarHeight(activity)
-            if (rootView != null && rootView is CoordinatorLayout) {
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-                    rootView.fitsSystemWindows = false
-                    contentView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha))
-                    val isNeedRequestLayout = contentView.paddingTop < statusBarHeight
-                    if (isNeedRequestLayout) {
-                        contentView.setPadding(0, statusBarHeight, 0, 0)
-                        rootView.post { rootView.requestLayout() }
-                    }
-                } else {
-                    rootView.setStatusBarBackgroundColor(calculateStatusColor(color, statusBarAlpha))
-                }
-            } else {
-                contentView.setPadding(0, statusBarHeight, 0, 0)
-                contentView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha))
-            }
+            contentView.setPadding(0, statusBarHeight, 0, 0)
+            contentView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha))
             setTransparentForWindow(activity)
         }
     }
@@ -520,7 +505,8 @@ object StatusBarUtil {
     private fun setMeizuStatusBarDarkIcon(activity: Activity, darkIcon: Boolean) {
         try {
             val lp = activity.window.attributes
-            val darkFlag = WindowManager.LayoutParams::class.java.getDeclaredField("MEIZU_FLAG_DARK_STATUS_BAR_ICON")
+            val darkFlag =
+                WindowManager.LayoutParams::class.java.getDeclaredField("MEIZU_FLAG_DARK_STATUS_BAR_ICON")
             val meizuFlags = WindowManager.LayoutParams::class.java.getDeclaredField("meizuFlags")
             darkFlag.isAccessible = true
             meizuFlags.isAccessible = true
@@ -547,7 +533,8 @@ object StatusBarUtil {
         val fakeStatusBarView = decorView.findViewById<View>(FAKE_STATUS_BAR_VIEW_ID)
         if (fakeStatusBarView != null) {
             decorView.removeView(fakeStatusBarView)
-            val rootView = (activity.findViewById<View>(android.R.id.content) as ViewGroup).getChildAt(0) as ViewGroup
+            val rootView =
+                (activity.findViewById<View>(android.R.id.content) as ViewGroup).getChildAt(0) as ViewGroup
             rootView.setPadding(0, 0, 0, 0)
         }
     }
@@ -582,7 +569,8 @@ object StatusBarUtil {
     private fun createStatusBarView(activity: Activity, @ColorInt color: Int, alpha: Int = 0): View {
         // 绘制一个和状态栏一样高的矩形
         val statusBarView = View(activity)
-        val params = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, getStatusBarHeight(activity))
+        val params =
+            LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, getStatusBarHeight(activity))
         statusBarView.layoutParams = params
         statusBarView.setBackgroundColor(calculateStatusColor(color, alpha))
         statusBarView.id = FAKE_STATUS_BAR_VIEW_ID
@@ -648,7 +636,8 @@ object StatusBarUtil {
     private fun createTranslucentStatusBarView(activity: Activity, alpha: Int): View {
         // 绘制一个和状态栏一样高的矩形
         val statusBarView = View(activity)
-        val params = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, getStatusBarHeight(activity))
+        val params =
+            LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, getStatusBarHeight(activity))
         statusBarView.layoutParams = params
         statusBarView.setBackgroundColor(Color.argb(alpha, 0, 0, 0))
         statusBarView.id = FAKE_TRANSLUCENT_VIEW_ID

@@ -38,18 +38,18 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
+    implementation "androidx.core:core-ktx:${rootProject.ext.androidx_core}"
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.androidx_appcompat}"
 
     ext.kotlin_coroutines_version = "1.6.4"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
-    api 'androidx.activity:activity:1.5.1'
-    api 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
-    api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
-    api 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    api "androidx.activity:activity:${rootProject.ext.androidx_activity}"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.ext.androidx_livedata_ktx}"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext.androidx_viewmodel_ktx}"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.ext.androidx_runtime_ktx}"
+    api "androidx.recyclerview:recyclerview:${rootProject.ext.recyclerViewVersion}"
 
-    implementation 'com.tencent:mmkv:1.2.14'
-    implementation 'com.github.getActivity:ToastUtils:11.2'
+    api 'com.tencent:mmkv:1.2.14'
+    api 'com.github.getActivity:ToastUtils:11.2'
 }

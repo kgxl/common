@@ -2,10 +2,9 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
-apply from : '../maven.gradle'
 
 android {
-    namespace 'com.kgxl.ble'
+    namespace 'com.kgxl.network'
     compileSdk 32
 
     defaultConfig {
@@ -33,11 +32,9 @@ android {
 }
 
 dependencies {
-
     implementation "androidx.core:core-ktx:${rootProject.ext.androidx_core}"
     implementation "androidx.appcompat:appcompat:${rootProject.ext.androidx_appcompat}"
-
-    api 'no.nordicsemi.android.support.v18:scanner:1.6.0'
-    api 'no.nordicsemi.android:ble-ktx:2.6.0-alpha03'
-    api 'no.nordicsemi.android:ble-livedata:2.6.0-alpha03'
+    api "com.squareup.retrofit2:retrofit:2.9.0"
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
 }

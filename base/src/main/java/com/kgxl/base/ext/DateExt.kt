@@ -83,3 +83,42 @@ fun getWeekOfDate(date: Date?): String {
     val intWeek = calendar[Calendar.DAY_OF_WEEK] - 1
     return weekDaysName[intWeek]
 }
+
+
+/**
+ * 转换时间 格式为：00:00:00
+ */
+fun Long.getCountTimeByLong(): String {
+    var totalTime = (this / 1000).toInt() //秒
+    var hour = 0
+    var minute = 0
+    var second = 0
+    if (3600 <= totalTime) {
+        hour = totalTime / 3600
+        totalTime -= 3600 * hour
+    }
+    if (60 <= totalTime) {
+        minute = totalTime / 60
+        totalTime -= 60 * minute
+    }
+    if (0 <= totalTime) {
+        second = totalTime
+    }
+    val sb = StringBuilder()
+    if (hour < 10) {
+        sb.append("0").append(hour).append(":")
+    } else {
+        sb.append(hour).append(":")
+    }
+    if (minute < 10) {
+        sb.append("0").append(minute).append(":")
+    } else {
+        sb.append(minute).append(":")
+    }
+    if (second < 10) {
+        sb.append("0").append(second)
+    } else {
+        sb.append(second)
+    }
+    return sb.toString()
+}
