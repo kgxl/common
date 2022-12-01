@@ -48,5 +48,5 @@ dependencies {
     implementation project(':ble')
     implementation project(':base')
     implementation project(':network')
-    implementation "com.github.kgxl.BaseProject:base:1.0.0"
+//    implementation "com.github.kgxl.BaseProject:base:1.0.0"
 }
