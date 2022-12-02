@@ -46,4 +46,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <FrameLayout
+        android:background="#00ff00"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+        <TextView
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:text="哈哈哈"
+            android:clickable="true"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+
 </LinearLayout>

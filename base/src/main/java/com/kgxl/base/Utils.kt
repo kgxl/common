@@ -2,7 +2,8 @@ package com.kgxl.base
 
 import android.annotation.SuppressLint
 import android.app.Application
-import android.util.Log
+import com.hjq.toast.ToastUtils
+import com.kgxl.base.utils.SPUtils
 
 /**
  * Created by zjy on 2022/11/10
@@ -24,6 +25,8 @@ class Utils private constructor() {
          * @param app application
          */
         fun init(app: Application) {
+            SPUtils.init(app)
+            ToastUtils.init(app)
             if (sApp == null) {
                 sApp = app
                 return

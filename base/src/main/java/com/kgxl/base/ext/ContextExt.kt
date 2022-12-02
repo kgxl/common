@@ -1,5 +1,6 @@
 package com.kgxl.base.ext
 
+import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -21,4 +22,15 @@ fun Context.copyText(info: String, isToast: Boolean = false) {
     if (isToast) {
 //        ToastUtil.success(this, this.getString(R.string.copy_2_pasteboard))
     }
+}
+
+
+fun Context?.isFinishing(): Boolean {
+    if (this == null) {
+        return false
+    }
+    if (this !is Activity) {
+        return false
+    }
+    return this.isFinishing
 }

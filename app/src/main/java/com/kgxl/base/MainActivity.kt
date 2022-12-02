@@ -4,6 +4,9 @@ import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.content.IntentFilter
 import android.widget.Button
+import androidx.recyclerview.widget.ItemTouchHelper
+import com.hjq.toast.ToastUtils
+import com.kgxl.base.bean.SwipeCardBean
 import com.kgxl.base.ble.BleActivity
 import com.kgxl.base.ext.launch
 import com.kgxl.base.test.databinding.ActivityMainBinding
@@ -88,7 +91,23 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
         }
         SPUtils.save("123", 111)
         println("sp get ${SPUtils.get("123", 0)}")
-
+        val datas = ArrayList<SwipeCardBean>()
+        datas.add(SwipeCardBean("哈哈哈1", com.kgxl.base.test.R.mipmap.ssssss))
+        datas.add(SwipeCardBean("哈哈哈2", com.kgxl.base.test.R.mipmap.ic_launcher))
+        datas.add(SwipeCardBean("哈哈哈3", com.kgxl.base.test.R.mipmap.ssssss))
+        datas.add(SwipeCardBean("哈哈哈4", com.kgxl.base.test.R.mipmap.ic_launcher))
+        mViewBinding.rv.apply {
+            val universalAdapter = UniversalAdapter(datas, this@MainActivity)
+            layoutManager = SwipeCardLayoutManager(this@MainActivity)
+            adapter = universalAdapter
+            CardConfig.initConfig(this@MainActivity)
+            val call = SwipeCardCallBack(datas,universalAdapter,this)
+            val helper = ItemTouchHelper(call)
+            helper.attachToRecyclerView(this)
+        }
+        mViewBinding.btn.setOnClickListener {
+            ToastUtils.show("点击了 哈哈哈")
+        }
     }
 
     override fun initData() {
