@@ -17,7 +17,7 @@ import java.util.*
 /**
  * Created by zjy on 2022/11/11
  */
-class FileUtils {
+object FileUtils {
     /**
      * Return the file by path.
      *

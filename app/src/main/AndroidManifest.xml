@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
+
     <application
         android:name="com.kgxl.base.App"
         android:allowBackup="true"
@@ -12,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Base"
         tools:targetApi="31">
+        <activity
+            android:name="com.kgxl.base.ml.QrcodeActivity"
+            android:exported="false"/>
+        <activity android:name="com.kgxl.base.ml.TranslatorActivity" />
+        <activity android:name="com.kgxl.base.ml.MlActivity" />
+        <activity android:name="com.kgxl.base.camera.CameraActivity" />
         <activity android:name="com.kgxl.base.ble.BleActivity" />
         <activity
             android:name="com.kgxl.base.MainActivity"

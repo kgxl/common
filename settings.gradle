@@ -22,3 +22,7 @@ include ':download'
 include ':ble'
 
 include ':network'
+include ':camera'
+include ':ml'
+include ':image'
+include ':qrcode'

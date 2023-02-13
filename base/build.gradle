@@ -45,6 +45,7 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
     api "androidx.activity:activity:${rootProject.ext.androidx_activity}"
+    api "androidx.activity:activity-ktx:${rootProject.ext.androidx_activity}"
     api "androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.ext.androidx_livedata_ktx}"
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext.androidx_viewmodel_ktx}"
     api "androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.ext.androidx_runtime_ktx}"

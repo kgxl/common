@@ -34,34 +34,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btn_ble"
-        android:text="蓝牙"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="蓝牙" />
 
     <Button
         android:id="@+id/btn_net"
-        android:text="请求网络"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="请求网络" />
 
-    <FrameLayout
-        android:background="#00ff00"
+    <Button
+        android:id="@+id/btn_camera"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"/>
-        <TextView
-            android:id="@+id/btn"
-            android:layout_width="wrap_content"
-            android:text="哈哈哈"
-            android:clickable="true"
-            android:layout_gravity="right"
-            android:layout_height="wrap_content"/>
-    </FrameLayout>
-
-
+        android:layout_height="wrap_content"
+        android:text="相机相关" />
+    <Button
+        android:id="@+id/btn_selfie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="人像分割" />
+    <Button
+        android:id="@+id/btn_translate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="翻译" />
+    <Button
+        android:id="@+id/btn_qrcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="二维码" />
 </LinearLayout>

@@ -8,8 +8,13 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import com.hjq.toast.ToastUtils
 import com.kgxl.base.bean.SwipeCardBean
 import com.kgxl.base.ble.BleActivity
+import com.kgxl.base.camera.CameraActivity
 import com.kgxl.base.ext.launch
+import com.kgxl.base.ml.MlActivity
+import com.kgxl.base.ml.QrcodeActivity
+import com.kgxl.base.ml.TranslatorActivity
 import com.kgxl.base.test.databinding.ActivityMainBinding
+import com.kgxl.base.utils.DoubleCheckHelper
 import com.kgxl.base.utils.NotificationUtil
 import com.kgxl.base.utils.SPUtils
 import com.kgxl.ble.BleReceiver
@@ -89,24 +94,17 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
                 println(api.getBaidu().toString())
             }
         }
-        SPUtils.save("123", 111)
-        println("sp get ${SPUtils.get("123", 0)}")
-        val datas = ArrayList<SwipeCardBean>()
-        datas.add(SwipeCardBean("哈哈哈1", com.kgxl.base.test.R.mipmap.ssssss))
-        datas.add(SwipeCardBean("哈哈哈2", com.kgxl.base.test.R.mipmap.ic_launcher))
-        datas.add(SwipeCardBean("哈哈哈3", com.kgxl.base.test.R.mipmap.ssssss))
-        datas.add(SwipeCardBean("哈哈哈4", com.kgxl.base.test.R.mipmap.ic_launcher))
-        mViewBinding.rv.apply {
-            val universalAdapter = UniversalAdapter(datas, this@MainActivity)
-            layoutManager = SwipeCardLayoutManager(this@MainActivity)
-            adapter = universalAdapter
-            CardConfig.initConfig(this@MainActivity)
-            val call = SwipeCardCallBack(datas,universalAdapter,this)
-            val helper = ItemTouchHelper(call)
-            helper.attachToRecyclerView(this)
+        mViewBinding.btnCamera.setOnClickListener {
+            startActivity(Intent(this, CameraActivity::class.java))
         }
-        mViewBinding.btn.setOnClickListener {
-            ToastUtils.show("点击了 哈哈哈")
+        mViewBinding.btnSelfie.setOnClickListener {
+            startActivity(Intent(this, MlActivity::class.java))
+        }
+        mViewBinding.btnTranslate.setOnClickListener {
+            startActivity(Intent(this, TranslatorActivity::class.java))
+        }
+        mViewBinding.btnQrcode.setOnClickListener {
+            startActivity(Intent(this, QrcodeActivity::class.java))
         }
     }
 

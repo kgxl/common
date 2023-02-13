@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.kgxl.camera'
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "androidx.core:core-ktx:${rootProject.ext.androidx_core}"
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.androidx_appcompat}"
+
+
+    //cameraX
+    def camerax_version = "1.1.0"
+    api "androidx.camera:camera-core:${camerax_version}"
+    api "androidx.camera:camera-camera2:${camerax_version}"
+    api "androidx.camera:camera-lifecycle:${camerax_version}"
+    api "androidx.camera:camera-video:${camerax_version}"
+
+    api "androidx.camera:camera-view:${camerax_version}"
+    api "androidx.camera:camera-extensions:${camerax_version}"
+}
