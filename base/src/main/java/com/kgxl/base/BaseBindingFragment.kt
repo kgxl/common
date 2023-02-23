@@ -14,7 +14,7 @@ abstract class BaseBindingFragment<V : ViewBinding> : Fragment() {
 
     protected lateinit var mViewBinding: V
 
-    abstract fun initViewBinding(): V
+    abstract fun initViewBinding(inflater: LayoutInflater, container: ViewGroup?): V
 
     abstract fun initView()
 
@@ -23,7 +23,7 @@ abstract class BaseBindingFragment<V : ViewBinding> : Fragment() {
     abstract fun initObserver()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        initViewBinding()
+        mViewBinding = initViewBinding(inflater, container)
         initView()
         return mViewBinding.root
     }
