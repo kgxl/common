@@ -50,7 +50,7 @@ dependencies {
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext.androidx_viewmodel_ktx}"
     api "androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.ext.androidx_runtime_ktx}"
     api "androidx.recyclerview:recyclerview:${rootProject.ext.recyclerViewVersion}"
-
+    api "androidx.fragment:fragment-ktx:${rootProject.ext.androidx_activity}"
     api 'com.tencent:mmkv:1.2.14'
     api 'com.github.getActivity:ToastUtils:11.2'
     api 'com.google.android.material:material:1.5.0'
