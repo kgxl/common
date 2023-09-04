@@ -4,9 +4,6 @@ import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.content.IntentFilter
 import android.widget.Button
-import androidx.recyclerview.widget.ItemTouchHelper
-import com.hjq.toast.ToastUtils
-import com.kgxl.base.bean.SwipeCardBean
 import com.kgxl.base.ble.BleActivity
 import com.kgxl.base.camera.CameraActivity
 import com.kgxl.base.ext.launch
@@ -14,13 +11,12 @@ import com.kgxl.base.ml.MlActivity
 import com.kgxl.base.ml.QrcodeActivity
 import com.kgxl.base.ml.TranslatorActivity
 import com.kgxl.base.test.databinding.ActivityMainBinding
-import com.kgxl.base.utils.DoubleCheckHelper
 import com.kgxl.base.utils.NotificationUtil
-import com.kgxl.base.utils.SPUtils
 import com.kgxl.ble.BleReceiver
 import com.kgxl.download.DownLoadFactory
 import com.kgxl.download.OKDownloadListener
 import com.kgxl.network.RetrofitHelper
+import com.kgxl.toalive.open.AmsHookHelp
 import com.liulishuo.okdownload.DownloadTask
 import com.liulishuo.okdownload.SpeedCalculator
 import java.util.concurrent.TimeUnit
@@ -39,6 +35,15 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
                 println("$it")
             }
         }
+        Thread {
+            try {
+                Thread.sleep((1000 * 10).toLong())
+                println(" realStartAct")
+                AmsHookHelp.getInstance().realStartAct(App.application, Intent(applicationContext, MainActivity::class.java), MainActivity::class.java.canonicalName)
+            } catch (e: InterruptedException) {
+                e.printStackTrace()
+            }
+        }.start()
     }
 
     override fun initViewBinding(): ActivityMainBinding {

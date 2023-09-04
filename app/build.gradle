@@ -52,5 +52,6 @@ dependencies {
     implementation project(':ml')
     implementation project(':image')
     implementation project(':qrcode')
+    implementation project(':toalive')
     api 'androidx.multidex:multidex:2.0.1'
 }
