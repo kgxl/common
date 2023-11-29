@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 /**
- * Created by zjy on 2022/11/14
+ * Created by kgxl on 2022/11/14
  */
 
 fun Long?.convertToTime(formatPattern: String = "yyyy-MM-dd HH:mm:ss", locale: Locale = Locale.getDefault()): String {

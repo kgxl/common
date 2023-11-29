@@ -4,7 +4,7 @@ import android.content.Context
 import com.tencent.mmkv.MMKV
 
 /**
- * Created by zjy on 2022/11/30
+ * Created by kgxl on 2022/11/30
  */
 object SPUtils {
     private val userKV by lazy { MMKV.mmkvWithID("user") }

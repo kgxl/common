@@ -11,7 +11,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.kgxl.base.ext.isFinishing
 
 /**
- * Created by zjy on 2022/12/2
+ * Created by kgxl on 2022/12/2
  */
 abstract class BaseBottomSheetDialog<VB : ViewBinding> : BottomSheetDialogFragment() {
 

@@ -1,8 +1,5 @@
 package com.kgxl.base.utils
 
-/**
- * Created by zjy on 2022/11/11
- */
 import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Context
@@ -17,7 +14,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.kgxl.base.R
 
 /**
- * Created by zjy on 2019-05-14
+ * Created by kgxl on 2019-05-14
  * 状态栏工具类
  */
 object StatusBarUtil {

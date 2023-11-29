@@ -10,7 +10,7 @@ import no.nordicsemi.android.ble.BleManager
 import no.nordicsemi.android.support.v18.scanner.ScanResult
 
 /**
- * Created by zjy on 2022/11/15
+ * Created by kgxl on 2022/11/15
  */
 class BleAdapter(private val data: List<ScanResult>) : RecyclerView.Adapter<BleAdapter.BleViewHolder>() {
 

@@ -5,7 +5,7 @@ import com.kgxl.base.Utils
 import java.util.*
 
 /**
- * Created by zjy on 2022/11/14
+ * Created by kgxl on 2022/11/14
  */
 object ByteUtils {
     fun bytes2HexString(bytes: ByteArray?, isUpperCase: Boolean = true): String {

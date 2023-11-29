@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
 /**
- * Created by zjy on 2022/11/10
+ * Created by kgxl on 2022/11/10
  */
 abstract class BaseBindingFragment<V : ViewBinding> : Fragment() {
 

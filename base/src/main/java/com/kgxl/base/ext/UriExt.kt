@@ -5,7 +5,7 @@ import android.net.Uri
 import android.provider.MediaStore
 
 /**
- * Created by zjy on 2023/1/12
+ * Created by kgxl on 2023/1/12
  */
 fun Uri.getPath(ctx: Context): String {
     val c = ctx.contentResolver.query(this, null, null, null, null)

@@ -5,7 +5,7 @@ import android.os.IBinder;
 import java.lang.reflect.Field;
 
 /**
- * Created by zjy on 2023/8/14
+ * Created by kgxl on 2023/8/14
  */
 public abstract class AmsHooker {
     // 通过反射，将am替换成proxy

@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
- * Created by zjy on 2022/11/29
+ * Created by kgxl on 2022/11/29
  */
 object RetrofitHelper {
     private const val defaultTimeout = 30L

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 /**
- * Created by zjy on 2022/11/28
+ * Created by kgxl on 2022/11/28
  */
 class CustomItemDecoration private constructor(val build: Builder) : ItemDecoration() {
 

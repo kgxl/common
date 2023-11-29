@@ -4,7 +4,7 @@ import android.bluetooth.BluetoothDevice
 import java.lang.reflect.InvocationTargetException
 
 /**
- * Created by zjy on 2022/11/17
+ * Created by kgxl on 2022/11/17
  */
 fun BluetoothDevice.isConnect(): Boolean {
     try {

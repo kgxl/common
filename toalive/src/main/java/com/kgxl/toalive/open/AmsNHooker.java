@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Created by zjy on 2023/8/14
+ * Created by kgxl on 2023/8/14
  */
 public class AmsNHooker extends AmsHooker {
 

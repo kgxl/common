@@ -13,7 +13,7 @@ import com.google.mlkit.vision.segmentation.selfie.SelfieSegmenterOptions
 import java.nio.ByteBuffer
 
 /**
- * Created by zjy on 2023/1/30
+ * Created by kgxl on 2023/1/30
  */
 object SegmentationSelfieHelper {
 

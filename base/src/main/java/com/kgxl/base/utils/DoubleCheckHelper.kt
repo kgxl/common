@@ -1,7 +1,7 @@
 package com.kgxl.base.utils
 
 /**
- * Created by zjy on 2022/12/2
+ * Created by kgxl on 2022/12/2
  */
 object DoubleCheckHelper {
     private var lastClickTime = 0L

@@ -11,7 +11,7 @@ import com.kgxl.ml.translate.TranslateHelper
 import java.util.*
 
 /**
- * Created by zjy on 2023/1/31
+ * Created by kgxl on 2023/1/31
  */
 class TranslatorVM : ViewModel() {
     var translator: Translator? = null

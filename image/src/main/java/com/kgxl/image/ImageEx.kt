@@ -7,7 +7,7 @@ import com.bumptech.glide.request.RequestOptions
 import jp.wasabeef.glide.transformations.BlurTransformation
 
 /**
- * Created by zjy on 2023/2/1
+ * Created by kgxl on 2023/2/1
  */
 fun ImageView.loadCover(url: String, placeHolder: Int = 0, errorId: Int) {
     Glide.with(this).load(url).apply {

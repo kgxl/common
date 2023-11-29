@@ -8,7 +8,7 @@ import com.google.mlkit.nl.translate.Translation
 import com.google.mlkit.nl.translate.TranslatorOptions
 
 /**
- * Created by zjy on 2023/1/30
+ * Created by kgxl on 2023/1/30
  */
 object TranslateHelper {
     const val TAG = "TranslateHelper"

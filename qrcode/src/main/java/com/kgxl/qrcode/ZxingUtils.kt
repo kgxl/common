@@ -11,7 +11,7 @@ import java.util.*
 
 
 /**
- * Created by zjy on 2023/2/1
+ * Created by kgxl on 2023/2/1
  */
 object ZxingUtils {
     fun createQRImage(content: String?, widthPix: Int, heightPix: Int, isDeleteWhite: Boolean): Bitmap? {

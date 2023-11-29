@@ -7,7 +7,7 @@ import com.kgxl.toalive.live.Leoric
 import com.kgxl.toalive.live.LeoricConfigs
 
 /**
- * Created by zjy on 2022/11/10
+ * Created by kgxl on 2022/11/10
  */
 class App : Application() {
     companion object{

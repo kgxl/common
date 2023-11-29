@@ -6,7 +6,7 @@ import android.content.ClipboardManager
 import android.content.Context
 
 /**
- * Created by zjy on 2022/11/10
+ * Created by kgxl on 2022/11/10
  */
 fun Context.copyText(info: String) {
     copyText(info, true)

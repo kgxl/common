@@ -3,7 +3,7 @@ package com.kgxl.base.ext
 import com.kgxl.base.utils.ScreenUtil
 
 /**
- * Created by zjy on 2022/11/11
+ * Created by kgxl on 2022/11/11
  */
 /**
  * dp 2 px

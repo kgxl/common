@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 
 
 /**
- * Created by zjy on 2022/11/14
+ * Created by kgxl on 2022/11/14
  * 监听蓝牙打开和链接状态
  */
 class BleReceiver : BroadcastReceiver() {

@@ -13,7 +13,7 @@ import kotlinx.coroutines.withContext
 import java.io.*
 
 /**
- * Created by zjy on 2023/1/10
+ * Created by kgxl on 2023/1/10
  */
 class BitmapUtils {
     /**

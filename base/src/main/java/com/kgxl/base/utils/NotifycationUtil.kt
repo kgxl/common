@@ -12,7 +12,7 @@ import com.kgxl.base.R
 import com.kgxl.base.Utils
 
 /**
- * Created by zjy on 2022/11/10
+ * Created by kgxl on 2022/11/10
  */
 object NotificationUtil {
     const val DEFAULT_CHANNEL_ID = 111

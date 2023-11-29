@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 
 
 /**
- * Created by zjy on 2022/11/14
+ * Created by kgxl on 2022/11/14
  */
 object BlePermissionUtil {
 

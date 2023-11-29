@@ -13,7 +13,7 @@ import com.liulishuo.okdownload.core.listener.assist.Listener4SpeedAssistExtend
 
 
 /**
- * Created by zjy on 2022/11/11
+ * Created by kgxl on 2022/11/11
  */
 class OkDownload private constructor() : IDownload<DownloadTask> {
 

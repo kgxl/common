@@ -5,7 +5,7 @@ import com.google.mlkit.vision.text.Text
 
 
 /**
- * Created by zjy on 2023/2/9
+ * Created by kgxl on 2023/2/9
  */
 object TextRecognitionHelper {
     fun recognition(image: Image, invoke: (Text) -> Unit) {

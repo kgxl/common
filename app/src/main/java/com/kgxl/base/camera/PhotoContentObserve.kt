@@ -8,7 +8,7 @@ import android.provider.MediaStore
 
 
 /**
- * Created by zjy on 2023/1/12
+ * Created by kgxl on 2023/1/12
  * 监听相册改变
  * 必须添加[android.Manifest.permission.READ_EXTERNAL_STORAGE]权限否则无法读取
  */

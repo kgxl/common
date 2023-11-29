@@ -7,7 +7,7 @@ import androidx.activity.result.ActivityResultLauncher
 import com.kgxl.ble.WrapBleManager
 
 /**
- * Created by zjy on 2022/11/14
+ * Created by kgxl on 2022/11/14
  */
 class MyBleManager(ctx: Context, activityLaunch: ActivityResultLauncher<Intent>, permissions: ActivityResultLauncher<Array<String>>) : WrapBleManager(ctx, activityLaunch, permissions) {
 

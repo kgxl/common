@@ -1,7 +1,7 @@
 package com.kgxl.download
 
 /**
- * Created by zjy on 2022/11/11
+ * Created by kgxl on 2022/11/11
  */
 interface IDownload<T> {
     fun init()

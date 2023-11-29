@@ -6,7 +6,7 @@ import com.hjq.toast.ToastUtils
 import com.kgxl.base.utils.SPUtils
 
 /**
- * Created by zjy on 2022/11/10
+ * Created by kgxl on 2022/11/10
  */
 class Utils private constructor() {
     init {

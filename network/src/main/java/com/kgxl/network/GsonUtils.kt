@@ -4,7 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
 /**
- * Created by zjy on 2022/11/30
+ * Created by kgxl on 2022/11/30
  */
 object GsonUtils {
 

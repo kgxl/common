@@ -1,7 +1,7 @@
 package com.kgxl.base.utils
 
 /**
- * Created by zjy on 2022/11/28
+ * Created by kgxl on 2022/11/28
  */
 
 import android.os.Handler
@@ -13,7 +13,7 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
 /**
- *  Created by zjy on 2021/8/27.
+ *  Created by kgxl on 2021/8/27.
  *  基于[android.os.CountDownTimer] 新增[pause] [resume]
  */
 class CountDownTimerWrapper(

@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 
 /**
- * Created by zjy on 2022/11/14
+ * Created by kgxl on 2022/11/14
  */
 abstract class WrapBleManager(private val ctx: Context, private val activityResultLauncher: ActivityResultLauncher<Intent>, private val requestPermissions: ActivityResultLauncher<Array<String>>) : ObservableBleManager(ctx) {
     val scanResult = MutableSharedFlow<List<ScanResult>>(0, extraBufferCapacity = 3)

@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 /**
- * Created by zjy on 2023/8/16
+ * Created by kgxl on 2023/8/16
  */
 public class AmsHookHelp {
     private AmsHookHelp() {
@@ -81,7 +81,7 @@ public class AmsHookHelp {
             return result == AppOpsManager.MODE_ALLOWED;
 
         } catch (Exception e) {
-            Log.e("zjy", "not support");
+            Log.e("kgxl", "not support");
         }
         return false;
     }
