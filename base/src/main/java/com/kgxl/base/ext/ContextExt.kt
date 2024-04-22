@@ -4,6 +4,10 @@ import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.widget.Toast
+import com.kgxl.base.R
 
 /**
  * Created by kgxl on 2022/11/10
@@ -49,7 +53,7 @@ private fun getVersionCode(context: Context): Long {
     }
 }
 
-fun Context.toMarket(isGoogle: Boolean = true) {
+fun Context.toMarket(isGoogle: Boolean = true, errorTips: String = "no find store") {
     val intent = Intent(Intent.ACTION_VIEW)
     if (isGoogle) {
         intent.data =
@@ -63,16 +67,16 @@ fun Context.toMarket(isGoogle: Boolean = true) {
             //可以接收
             startActivity(intent)
         } else {
-            Toast.makeText(this, R.string.no_store, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, errorTips, Toast.LENGTH_SHORT).show()
         }
     }
 }
 
-fun Context.toShare() {
+fun Context.toShare(stareContent: String) {
     val intent = Intent(Intent.ACTION_SEND).apply {
         putExtra(
             Intent.EXTRA_TEXT,
-            "${getString(R.string.share_sudoku)} https://play.google.com/store/apps/details?id=${packageName}"
+            "$stareContent https://play.google.com/store/apps/details?id=${packageName}"
         )
         type = "text/plain"
     }
